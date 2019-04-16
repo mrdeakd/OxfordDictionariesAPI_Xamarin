@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="OxfordDictionariesAPI.DetailPage">
+    <ContentPage.Resources>
+        <Style x:Key="labelStyle" TargetType="View">
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="Margin" Value="5,10,5,10"/>
+        </Style>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid IsVisible="{Binding MainGrid}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="1" Text="Word" Style="{StaticResource labelStyle}" FontSize="Large"/>
+            <Label Grid.Row="1" Grid.Column="1" Text="{Binding SelectedTranslation.Text}" Style="{StaticResource labelStyle}" FontSize="Large"/>
+            <Label Grid.Row="2" Grid.ColumnSpan="2" Text="Sentences" Style="{StaticResource labelStyle}"/>
+            <ListView Grid.Row="3" Grid.ColumnSpan="2" ItemsSource="{Binding Sentences}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Text}" LineBreakMode="WordWrap"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Grid.Row="4" Grid.ColumnSpan="2" Text="Synonyms" Style="{StaticResource labelStyle}"/>
+            <ListView Grid.Row="5" Grid.ColumnSpan="2" ItemsSource="{Binding Synonyms}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Text}" Style="{StaticResource labelStyle}"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Grid.Row="6" Grid.ColumnSpan="2" Text="Antonyms" Style="{StaticResource labelStyle}"/>
+            <ListView Grid.Row="7" Grid.ColumnSpan="2" ItemsSource="{Binding Antonyms}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Text}" Style="{StaticResource labelStyle}"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <Grid IsVisible="{Binding IsLoading}">
+            <ActivityIndicator IsRunning="{Binding IsLoading}" />
+        </Grid>
+    </Grid>
+</ContentPage>

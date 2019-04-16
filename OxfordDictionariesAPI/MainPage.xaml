@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:OxfordDictionariesAPI" x:Class="OxfordDictionariesAPI.MainPage" Title="Oxford Dictionaries API">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <ListView Grid.Column="0" ItemsSource="{Binding SourceLanguages}" SelectedItem="{Binding SelectedSourceLanguage}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding Language}"/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView Grid.Column="1" ItemsSource="{Binding TargetLanguages}" SelectedItem="{Binding SelectedTargetLanguage}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding Language}"/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Entry Grid.Row="1" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" Text="{Binding Word, Mode=TwoWay}" />
+        <Button Grid.Row="2" Grid.ColumnSpan="2" Text="Translate" Command="{Binding TranslateButtonCommand}" IsEnabled="{Binding EnabledButton}" />
+        <Label Grid.Row="3" Grid.ColumnSpan="2" Text="Translation" HorizontalTextAlignment="Center" />
+        <ListView IsVisible="{Binding ListViewVisible}" Grid.Row="4" Grid.ColumnSpan="2" ItemsSource="{Binding Translation}" SelectedItem="{Binding SelectedTranslation}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding Text}"/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Grid Grid.Row="4" Grid.ColumnSpan="2" IsVisible="{Binding LoadingIndicator}">
+            <ActivityIndicator IsRunning="{Binding LoadingIndicator}" />
+        </Grid>
+    </Grid>
+</ContentPage>
