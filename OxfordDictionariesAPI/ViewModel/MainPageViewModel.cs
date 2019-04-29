@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
-using Android.Content.Res;
 using OxfordDictionariesAPI.Model;
 using OxfordDictionariesAPI.Services;
 using Xamarin.Forms;

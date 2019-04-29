@@ -1,5 +1,5 @@
-﻿<Properties StartupConfiguration="{1A7A3A85-6A21-4F05-8B42-3C56FB6A9A67}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="OxfordDictionariesAPI/Services/LanguagesService.cs">
+﻿<Properties StartupConfiguration="{B550E84E-A9BC-4A64-8AFF-C905ECBEAAA6}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="OxfordDictionariesAPI/ViewModel/MainPageViewModel.cs">
     <Files>
       <File FileName="OxfordDictionariesAPI/ViewModel/DetailPageViewModel.cs" Line="65" Column="99" />
       <File FileName="OxfordDictionariesAPI/Model/SentencesGroup.cs" Line="1" Column="1" />
@@ -10,7 +10,7 @@
       <File FileName="OxfordDictionariesAPI/Services/TranslationService.cs" Line="14" Column="35" />
       <File FileName="OxfordDictionariesAPI/Services/LanguagesService.cs" Line="18" Column="37" />
       <File FileName="OxfordDictionariesAPI/MainPage.xaml" />
-      <File FileName="OxfordDictionariesAPI/ViewModel/MainPageViewModel.cs" Line="143" Column="100" />
+      <File FileName="OxfordDictionariesAPI/ViewModel/MainPageViewModel.cs" Line="27" Column="52" />
       <File FileName="OxfordDictionariesAPI/DetailPage.xaml.cs" Line="1" Column="1" />
       <File FileName="OxfordDictionariesAPI/App.xaml" />
       <File FileName="OxfordDictionariesAPI/Model/SynonimsAntonymsGroup.cs" Line="1" Column="1" />
@@ -32,10 +32,10 @@
           <Node name="OxfordDictionariesAPI" expanded="True">
             <Node name="OxfordDictionariesAPI" expanded="True">
               <Node name="Model" expanded="True" />
-              <Node name="Services" expanded="True">
-                <Node name="LanguagesService.cs" selected="True" />
+              <Node name="Services" expanded="True" />
+              <Node name="ViewModel" expanded="True">
+                <Node name="MainPageViewModel.cs" selected="True" />
               </Node>
-              <Node name="ViewModel" expanded="True" />
               <Node name="App.xaml" expanded="True" />
               <Node name="DetailPage.xaml" expanded="True" />
               <Node name="MainPage.xaml" expanded="True" />
